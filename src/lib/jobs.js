@@ -34,6 +34,7 @@ export function mapJob(row) {
         aboutJob: row.about_job,
         responsibilities: row.responsibilities || [],
         qualifications: row.qualifications || [],
+        notes: row.notes || [],
         skills: row.skills || [],
         vacancies: row.vacancies ?? 1,
         postedAt: row.posted_at ?? null,

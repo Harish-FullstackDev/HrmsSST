@@ -97,11 +97,12 @@ function Stepper({ id, value, onChange, invalid }) {
     );
 }
 
-// An ordered list of one-line entries (responsibilities, qualifications):
-// each row has a drag handle, the field and a delete button; "Add …" adds an
-// empty row. Rows reorder by dragging the handle, or with the arrow keys on
-// it. The last row can't be deleted, only emptied.
-function ListField({ id, label, addLabel, value, onChange, error }) {
+// An ordered list of one-line entries (responsibilities, qualifications,
+// notes): each row has a drag handle, the field and a delete button; "Add …"
+// adds an empty row. Rows reorder by dragging the handle, or with the arrow
+// keys on it. The last row can't be deleted, only emptied. `required: false`
+// drops the asterisk (notes are optional).
+function ListField({ id, label, addLabel, value, onChange, error, required = true }) {
     const [dragFrom, setDragFrom] = useState(null);
     const [armed, setArmed] = useState(null);
 
@@ -115,7 +116,7 @@ function ListField({ id, label, addLabel, value, onChange, error }) {
 
     return (
         <fieldset className="flex min-w-0 flex-col gap-3">
-            <Label as="legend" required>
+            <Label as="legend" required={required}>
                 {label}
             </Label>
             <ol className="mt-3 flex flex-col gap-3">
@@ -386,6 +387,15 @@ export default function JobForm({ jobId, jobCode, status, heading, initial = emp
                         value={values.qualifications}
                         onChange={set("qualifications")}
                         error={errors.qualifications}
+                    />
+                    <ListField
+                        id="notes"
+                        label="Note"
+                        addLabel="Add Note"
+                        value={values.notes}
+                        onChange={set("notes")}
+                        error={errors.notes}
+                        required={false}
                     />
                 </div>
 

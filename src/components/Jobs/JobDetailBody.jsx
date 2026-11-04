@@ -24,6 +24,8 @@ export default function JobDetailBody({ job, otherJobs }) {
     const sections = [
         { title: "Roles and Responsibilities", items: job.responsibilities },
         { title: "Qualification", items: job.qualifications },
+        // Optional; dropped by the filter below when HR left it empty.
+        { title: "Note", items: job.notes },
         ...STATIC_SECTIONS,
     ].filter((section) => section.items.length > 0);
 

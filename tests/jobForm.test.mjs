@@ -142,6 +142,26 @@ describe("validateJob: drafts", () => {
     });
 });
 
+describe("validateJob: notes", () => {
+    test("notes are optional, even when publishing", () => {
+        assert.equal(publishErrors(complete({ notes: [""] })).notes, undefined);
+        assert.equal(publishErrors(complete({ notes: [] })).notes, undefined);
+    });
+
+    test("notes that are filled in follow the list rules", () => {
+        assert.ok(draftErrors(complete({ notes: ["x".repeat(301)] })).notes);
+        assert.ok(draftErrors(complete({ notes: ["ok"] })).notes);
+        assert.ok(draftErrors(complete({ notes: ["Bring ID", "bring id"] })).notes);
+        assert.equal(publishErrors(complete({ notes: ["Bring a photo ID to the interview"] })).notes, undefined);
+    });
+
+    test("notes are cleaned, capitalised and round-trip", () => {
+        assert.deepEqual(jobRow(complete({ notes: [" bring a photo ID ", ""] })).notes, ["Bring a photo ID"]);
+        const values = complete({ notes: ["Bring a photo ID"] });
+        assert.deepEqual(jobValues(jobRow(values)), { ...values, minYears: "3" });
+    });
+});
+
 describe("capitalizeFirst", () => {
     test("capitalises only the first letter", () => {
         assert.equal(capitalizeFirst("pondy (Hybrid)"), "Pondy (Hybrid)");
@@ -188,6 +208,7 @@ describe("jobRow / jobValues", () => {
             location: "Chennai",
             responsibilities: ["Own the design system"],
             qualifications: ["Portfolio of shipped work"],
+            notes: [],
             closes_on: "2026-12-01",
             experience_level: "Experienced",
             min_experience_years: 3,

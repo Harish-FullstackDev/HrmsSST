@@ -21,6 +21,7 @@ export const emptyJob = {
     location: "",
     responsibilities: [""],
     qualifications: [""],
+    notes: [""],
     closingDate: "",
     experienceLevel: "Fresher",
     minYears: "",
@@ -88,10 +89,11 @@ export function validateJob(values, { publish, today }) {
         errors.location = "Enter the job location.";
     }
 
-    for (const field of ["responsibilities", "qualifications"]) {
+    // Notes are optional: an empty list is fine even when publishing.
+    for (const field of ["responsibilities", "qualifications", "notes"]) {
         const items = filled(values[field]);
         if (items.length === 0) {
-            if (publish) errors[field] = "Add at least one.";
+            if (publish && field !== "notes") errors[field] = "Add at least one.";
         } else if (items.length > MAX_LIST_ITEMS) errors[field] = `Add at most ${MAX_LIST_ITEMS}.`;
         else if (items.some((item) => item.length > 300)) errors[field] = "Keep each one under 300 characters.";
         else if (items.some((item) => item.length < 3)) errors[field] = "Each one needs at least 3 characters.";
@@ -133,6 +135,7 @@ export function jobRow(values) {
         location: capitalizeFirst(String(values.location ?? "").trim().slice(0, 120)),
         responsibilities: filledSentences(values.responsibilities).slice(0, MAX_LIST_ITEMS),
         qualifications: filledSentences(values.qualifications).slice(0, MAX_LIST_ITEMS),
+        notes: filledSentences(values.notes).slice(0, MAX_LIST_ITEMS),
         closes_on: isRealDate(values.closingDate ?? "") ? values.closingDate : null,
         experience_level: EXPERIENCE_LEVELS.includes(values.experienceLevel) ? values.experienceLevel : "",
         min_experience_years: experienced && !isBlank(values.minYears) && Number.isInteger(Number(values.minYears)) ? Number(values.minYears) : null,
@@ -153,6 +156,7 @@ export function jobValues(row) {
         location: row.location ?? "",
         responsibilities: list(row.responsibilities),
         qualifications: list(row.qualifications),
+        notes: list(row.notes),
         closingDate: row.closes_on ?? "",
         experienceLevel: row.experience_level || "Fresher",
         minYears: row.min_experience_years == null ? "" : String(row.min_experience_years),
