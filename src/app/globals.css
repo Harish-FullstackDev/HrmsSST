@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-manrope: var(--font-manrope);
+  /* next/font sets --font-switzer-family; a token can't reference its own name. */
+  --font-switzer: var(--font-switzer-family);
+}
+
+/* Design tokens from the HR-Management Figma file. */
+@theme {
+  --color-navy-900: #00223d;
+  --color-primary: #003056;
+  --color-ink: #0e2b4b;
+  --color-ink-strong: #10131f;
+  --color-accent: #2aae8d;
+  --color-accent-strong: #269b81;
+  --color-success: #38a889;
+  --color-danger: #e15b6b;
+  --color-danger-strong: #df3651;
+  --color-line: #e7e9e9;
+  --color-field: #dfe3e3;
+  --color-field-soft: #eaeaea;
+  --color-placeholder: #b6bbc1;
+  --color-muted: #72767d;
+  --color-subtle: #a3a8ad;
+
+  /* New careers-portal designs (Acsendus Company Figma file). */
+  --color-action: #0061af;
+  --color-primary-200: #afc9e6;
+  --color-border-default: #c9d0d8;
+  --color-hint: #9ca3af;
+  --color-required: #d64545;
+  --color-muted-ink: #5c7088; /* text/muted */
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-700: #404040;
+
+  /* Signed-in application pages (job details, Figma 1380:2917). */
+  --color-ink-secondary: #415773; /* text/secondary */
+  --color-ink-disabled: #c9d0d8; /* text/disabled */
+  --color-info-100: #ddf1fd;
+  --color-info-500: #00acec;
+  --color-surface-brand-subtle: #ecf2f9;
+  --color-neutral-100: #f1f3f5;
+  --color-border-strong: #8695a7;
+  --color-rail: #e5eeff; /* apply stepper background rail */
+
+  /* HR dashboard (Figma 1898:5288 / 1905:1303). */
+  --color-primary-100: #d5e2f2;
+  --color-surface-tint: #eff4ff;
+  --color-ink-heading: #0b1c30;
+  --color-ink-body: #45464d;
+  --color-ink-caption: #76777d;
+  --color-card-border: rgb(198 198 205 / 0.3);
+  --color-row-divider: rgb(229 238 255 / 0.6);
+  --color-success-50: #eef6f1;
+  --color-success-500: #008e59;
+  --color-info-50: #f0f9fe;
+  --color-info-700: #0075a4;
+  --color-warning-50: #fef8f0;
+  --color-warning-600: #c28710;
+
+  /* HR job openings / candidates (Figma 1921:3445, 1983:7824). */
+  --color-neutral-200: #e4e7eb;
+  --color-primary-300: #8bb0da;
+  --color-primary-400: #5189c5;
+  --color-accent-subtle: #f5faf1; /* surface/accent-subtle */
+  --color-success-100: #d9ebe0;
+  --color-warning-100: #fcefdd;
+  --color-warning-200: #f9e1be;
+  --color-warning-500: #e8a317;
+  --color-error-100: #fcdfdc;
+  --color-error-200: #f8c3be;
+  --color-slate-line: #1e293b;
+  --color-slate-muted: #94a3b8;
+  --color-surface-drawer: #f8f8f8; /* primary/0 */
+}
+
+/* Apply stages slide in from the side they come from (components/Apply/ApplyStage.jsx). */
+@keyframes apply-step-in-next {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+}
+
+@keyframes apply-step-in-back {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+}
+
+/* Fields that appear when the applicant's Current Status changes. */
+@keyframes apply-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* Stepper check mark popping in once a stage is done. */
+@keyframes apply-check-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+/* HR candidate profile drawer sliding in from the right. */
+@keyframes hr-drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes hr-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* The same drawer and backdrop leaving (run with `forwards`). */
+@keyframes hr-drawer-out {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes hr-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Used by the Shimmer skeleton in components/skeletons/SkeletonPrimitives.jsx. */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}

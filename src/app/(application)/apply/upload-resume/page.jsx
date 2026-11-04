@@ -1,0 +1,9 @@
+import PageClient from "./PageClient";
+
+export const metadata = {
+    title: "Upload Resume · Apply · HRMS Portal",
+};
+
+export default function Page() {
+    return <PageClient />;
+}
