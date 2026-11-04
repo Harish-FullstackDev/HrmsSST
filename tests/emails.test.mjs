@@ -11,7 +11,7 @@ import {
 import { emailDetails, escapeHtml, renderHtml } from "../src/lib/email/mailer.js";
 
 const JOB = {
-    job_code: "ASC-2026-005",
+    job_code: "SST-2026-005",
     slug: "ui-designer-asc-2026-005",
     title: "UI Designer",
     department: "Design",
@@ -76,7 +76,7 @@ describe("hiring emails without SMTP", () => {
             origin: "http://localhost:3000",
         });
         assert.equal(logs.length, 1);
-        assert.match(logs[0], /job-published email to 2 HR account\(s\) for ASC-2026-005/);
+        assert.match(logs[0], /job-published email to 2 HR account\(s\) for SST-2026-005/);
     });
 
     test("no HR accounts, no email", async () => {
@@ -85,7 +85,7 @@ describe("hiring emails without SMTP", () => {
     });
 
     test("a job with missing optional fields still sends", async () => {
-        const bare = { job_code: "ASC-2026-006", title: "Intern", slug: null, closes_on: null, vacancies: null };
+        const bare = { job_code: "SST-2026-006", title: "Intern", slug: null, closes_on: null, vacancies: null };
         await sendJobPublishedEmail({ recipients: ["hr@example.com"], job: bare, publishedBy: undefined, origin: null });
         assert.equal(logs.length, 1);
     });

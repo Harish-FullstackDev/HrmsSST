@@ -1,6 +1,6 @@
 -- Application references in the form APP-<year>-<number>, numbered from 0001
 -- within each year (APP-2026-0001, APP-2026-0002, ... then APP-2027-0001), so
--- they can't be mistaken for job codes (ASC-2026-001). The year is India's.
+-- they can't be mistaken for job codes (SST-2026-001). The year is India's.
 -- Needs 20261102000000_hiring.sql first. Run once in the Supabase SQL editor;
 -- safe to re-run.
 

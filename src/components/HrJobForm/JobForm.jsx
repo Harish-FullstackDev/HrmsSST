@@ -195,7 +195,7 @@ function ListField({ id, label, addLabel, value, onChange, error, required = tru
 // a title; Publish checks everything and puts the job on the careers pages.
 // Shown in JobFormDialog: Back calls `onCancel`, a save calls `onSaved`, and
 // `dirtyRef` tells the dialog whether there are unsaved changes.
-// `heading` overrides the title ("Duplicate ASC-2026-001").
+// `heading` overrides the title ("Duplicate SST-2026-001").
 export default function JobForm({ jobId, jobCode, status, heading, initial = emptyJob, onCancel, onSaved, dirtyRef }) {
     const [values, setValues] = useState(initial);
     const [errors, setErrors] = useState({});
