@@ -78,7 +78,7 @@ $$;
 -- Users read their own profile; HR reads all. Nobody updates profiles from
 -- the app (that would let a candidate make themselves HR); promote HR staff
 -- in the SQL editor:
---   update public.profiles set role = 'hr' where email = 'someone@ascendus.com';
+--   update public.profiles set role = 'hr' where email = 'someone@example.com';
 drop policy if exists "profiles: read own or hr" on public.profiles;
 create policy "profiles: read own or hr" on public.profiles
     for select to authenticated

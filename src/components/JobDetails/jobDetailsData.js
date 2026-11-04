@@ -41,16 +41,15 @@ export const jobDetails = {
             ],
         },
         {
-            // Figma spells it "Acsendus".
-            title: "About Ascendus",
+            title: "About Support Studio Technologies",
             items: [
-                "Ascendus delivers technology and digital transformation services for organisations across the region.",
+                "Support Studio Technologies delivers technology and digital transformation services for organisations across the region.",
             ],
         },
         {
             title: "Important Notice",
             items: [
-                "Ascendus never asks candidates for payment at any stage of the hiring process.",
+                "Support Studio Technologies never asks candidates for payment at any stage of the hiring process.",
             ],
         },
     ],

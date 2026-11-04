@@ -55,7 +55,7 @@ function downloadCalendarFile(interview, position) {
     const lines = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
-        "PRODID:-//Ascendus//HRMS Portal//EN",
+        "PRODID:-//Support Studio Technologies//HRMS Portal//EN",
         "BEGIN:VEVENT",
         `UID:${stamp(interview.start)}-${position.replace(/\W+/g, "-")}@hrms-portal`,
         `DTSTAMP:${stamp(new Date().toISOString())}`,

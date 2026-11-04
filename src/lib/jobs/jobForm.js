@@ -160,5 +160,5 @@ export function jobValues(row) {
     };
 }
 
-// Today in India (where Ascendus hires), as an ISO date.
+// Today in India (where SST hires), as an ISO date.
 export const todayIso = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());

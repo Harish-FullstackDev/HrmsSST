@@ -33,13 +33,13 @@ export function renderHtml({ title, intro, middle = "", outro }) {
       <tr>
         <td align="center">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;">
-            <tr><td style="padding:32px 32px 0;font-size:20px;font-weight:bold;color:#0061af;">Ascendus Careers</td></tr>
+            <tr><td style="padding:32px 32px 0;font-size:20px;font-weight:bold;color:#0061af;">SST Careers</td></tr>
             <tr><td style="padding:24px 32px 0;font-size:14px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;">${escapeHtml(title)}</td></tr>
             <tr><td style="padding:16px 32px 0;font-size:14px;line-height:20px;">${intro}</td></tr>
             <tr><td align="center" style="padding:24px 32px;">${middle}</td></tr>
             <tr><td style="padding:0 32px 32px;font-size:13px;line-height:20px;color:#5c7088;">${outro}</td></tr>
           </table>
-          <p style="margin:16px 0 0;font-size:12px;color:#5c7088;">&copy; Ascendus Careers Portal</p>
+          <p style="margin:16px 0 0;font-size:12px;color:#5c7088;">&copy; Support Studio Technologies Careers Portal</p>
         </td>
       </tr>
     </table>
@@ -69,6 +69,6 @@ export async function send({ to, bcc, subject, text, html, devLine }) {
         console.log(`\n[email] ${devLine}  (SMTP_* not set, email not sent)\n`);
         return;
     }
-    const from = process.env.SMTP_FROM || `"Ascendus Careers" <${process.env.SMTP_USER}>`;
+    const from = process.env.SMTP_FROM || `"SST Careers" <${process.env.SMTP_USER}>`;
     await smtp.sendMail({ from, to: to ?? from, bcc, subject, text, html });
 }

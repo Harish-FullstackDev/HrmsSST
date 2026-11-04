@@ -7,14 +7,14 @@ import { emailButton, escapeHtml, renderHtml, send } from "./mailer";
 
 const CONTENT = {
     signup: {
-        subject: (code) => `Your Ascendus verification code: ${code}`,
+        subject: (code) => `Your SSTverification code: ${code}`,
         title: "Verify your email",
         intro: (email) =>
             `Thanks for creating your careers account. Enter this code on the verification page to confirm <strong>${email}</strong>:`,
         outro: "This code expires in 1 hour. If you didn't create an account, you can ignore this email.",
     },
     recovery: {
-        subject: (code) => `Your Ascendus password reset code: ${code}`,
+        subject: (code) => `Your SSTpassword reset code: ${code}`,
         title: "Reset your password",
         intro: (email) =>
             `We received a request to reset the password for <strong>${email}</strong>. Enter this verification code to continue:`,
@@ -47,7 +47,7 @@ export async function sendAccountCreatedEmail(email, firstName, signInUrl) {
     const button = signInUrl ? emailButton(signInUrl, "Sign In") : "";
     await send({
         to: email,
-        subject: "Your Ascendus Careers account is ready",
+        subject: "Your SST Careers account is ready",
         text:
             `${firstName ? `Hi ${firstName},` : "Hi,"}\n\n` +
             `Your careers account for ${email} has been created and your email is verified. ` +

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import ascendusLogo from "@/assets/CommonComponents/ascendus-logo-primary.svg";
+import sstLogo from "@/assets/CommonComponents/sst-logo.svg";
 
 // Candidate pages. A job page (/jobs/<slug>) sits under Search Jobs, so that
 // link stays underlined there. The sign-in screens' header (Figma 1306:2571)
@@ -39,8 +39,8 @@ export default function PortalHeader({ showProfileLink = false }) {
                 </nav>
                 <Link href="/" className="shrink-0">
                     <Image
-                        src={ascendusLogo}
-                        alt="Ascendus Company"
+                        src={sstLogo}
+                        alt="Support Studio Technologies"
                         priority
                         className="h-6 w-auto sm:h-8"
                     />

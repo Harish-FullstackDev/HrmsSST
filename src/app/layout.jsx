@@ -12,8 +12,7 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-// Switzer: the font of the new HR-portal Figma designs (same files as the
-// Ascendus website).
+// Switzer: the font of the new HR-portal Figma designs.
 const switzer = localFont({
   variable: "--font-switzer-family",
   src: [
@@ -25,8 +24,8 @@ const switzer = localFont({
 });
 
 export const metadata = {
-  title: "HRMS Portal",
-  description: "Human resource management portal",
+  title: "SST HRMS Portal",
+  description: "Support Studio Technologies human resource management portal",
 };
 
 export default function RootLayout({ children }) {

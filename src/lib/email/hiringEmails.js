@@ -61,13 +61,13 @@ export async function sendApplicationReceivedEmail({ email, firstName, reference
         subject: `Application received: ${job.title} (${reference})`,
         text:
             `Hi ${firstName},\n\n` +
-            `Thank you for applying for ${job.title} at Ascendus. We have received your application.\n\n` +
+            `Thank you for applying for ${job.title} at Support Studio Technologies. We have received your application.\n\n` +
             `${textDetails(rows)}\n\n` +
             `${link ? `Track your application: ${link}\n\n` : ""}${outro}`,
         html: renderHtml({
             title: "Application received",
             intro:
-                `Hi ${escapeHtml(firstName)},<br><br>Thank you for applying for <strong>${escapeHtml(job.title)}</strong> at Ascendus. ` +
+                `Hi ${escapeHtml(firstName)},<br><br>Thank you for applying for <strong>${escapeHtml(job.title)}</strong> at Support Studio Technologies. ` +
                 "We have received your application.",
             middle: emailDetails(rows) + (link ? `<div style="padding-top:24px;">${emailButton(link, "Go to My Profile")}</div>` : ""),
             outro,
@@ -95,7 +95,7 @@ export async function sendJobPublishedEmail({ recipients, job, publishedBy, orig
     ];
     const jobLink = origin && job.slug ? `${origin}/jobs/${encodeURIComponent(job.slug)}` : null;
     const hrLink = origin ? `${origin}/hr/job-openings` : null;
-    const outro = "You're receiving this because you have an HR account on the Ascendus Careers Portal.";
+    const outro = "You're receiving this because you have an HR account on the SST Careers Portal.";
 
     await send({
         bcc: recipients,
@@ -126,21 +126,21 @@ const STATUS_EMAILS = {
         subject: (job) => `Job offer: ${job.title}`,
         title: "You've been selected for an offer",
         body: (job) =>
-            `Good news: your application for ${job.title} at Ascendus has moved to the job offer stage. ` +
+            `Good news: your application for ${job.title} at Support Studio Technologies has moved to the job offer stage. ` +
             "Our HR team will contact you shortly with the offer details and next steps.",
     },
     hired: {
         subject: (job) => `Welcome aboard: ${job.title}`,
         title: "Your onboarding has started",
         body: (job) =>
-            `Congratulations! Your application for ${job.title} at Ascendus has moved to onboarding. ` +
+            `Congratulations! Your application for ${job.title} at Support Studio Technologies has moved to onboarding. ` +
             "Our HR team will be in touch with your joining details and the documents to prepare.",
     },
     rejected: {
         subject: (job) => `Update on your application: ${job.title}`,
         title: "Update on your application",
         body: (job) =>
-            `Thank you for your interest in ${job.title} at Ascendus and for the time you gave to the process. ` +
+            `Thank you for your interest in ${job.title} at Support Studio Technologies and for the time you gave to the process. ` +
             "After careful review, we won't be moving forward with your application for this role. " +
             "We encourage you to apply for other openings that match your profile.",
     },

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import ascendusLogo from "@/assets/HrShell/ascendus-logo-full.svg";
+import sstLogo from "@/assets/HrShell/sst-logo.svg";
 import collapseIcon from "@/assets/HrShell/icons/collapse-24.svg";
 import { HR_NAV_LINKS } from "./hrNavLinks";
 
@@ -58,8 +58,8 @@ export default function HrSidebar({ open, onClose }) {
                         >
                             <Image src={collapseIcon} alt="" className="size-6" />
                         </button>
-                        <Link href="/hr/dashboard" aria-label="Ascendus Company, dashboard">
-                            <Image src={ascendusLogo} alt="" priority className="h-6 w-[123px]" />
+                        <Link href="/hr/dashboard" aria-label="Support Studio Technologies, dashboard">
+                            <Image src={sstLogo} alt="" priority className="h-6 w-auto" />
                         </Link>
                     </div>
 

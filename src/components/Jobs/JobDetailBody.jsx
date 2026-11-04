@@ -2,17 +2,17 @@ import JobSectionAccordion from "@/components/JobDetails/JobSectionAccordion";
 import JobCard from "./JobCard";
 
 // Company-wide sections, the same on every posting (copy from
-// jobDetailsData.js, still awaiting sign-off). Figma spells it "Acsendus".
+// jobDetailsData.js, still awaiting sign-off).
 const STATIC_SECTIONS = [
     {
-        title: "About Ascendus",
+        title: "About Support Studio Technologies",
         items: [
-            "Ascendus delivers technology and digital transformation services for organisations across the region.",
+            "Support Studio Technologies delivers technology and digital transformation services for organisations across the region.",
         ],
     },
     {
         title: "Important Notice",
-        items: ["Ascendus never asks candidates for payment at any stage of the hiring process."],
+        items: ["Support Studio Technologies never asks candidates for payment at any stage of the hiring process."],
     },
 ];
 

@@ -26,7 +26,7 @@ const DECLARATIONS = [
         field: "consentData",
         required: true,
         text: [
-            "I consent to Ascendus Company collecting and processing my personal data, including my resume, identity details and uploaded documents, to assess my application.",
+            "I consent to Support Studio Technologies collecting and processing my personal data, including my resume, identity details and uploaded documents, to assess my application.",
             "I have read the Privacy Policy.",
         ],
     },
@@ -34,7 +34,7 @@ const DECLARATIONS = [
         field: "consentVerification",
         required: true,
         text: [
-            "I understand that my education, employment history and identity details may be verified by Ascendus or an authorised third party,",
+            "I understand that my education, employment history and identity details may be verified by Support Studio Technologies or an authorised third party,",
             "and I agree to provide the documents needed for this.",
         ],
     },
@@ -42,7 +42,7 @@ const DECLARATIONS = [
         field: "consentSharing",
         required: true,
         text: [
-            "I understand that my data may be shared with Ascendus group companies and service providers in other countries, only for official internal purposes.",
+            "I understand that my data may be shared with Support Studio Technologies group companies and service providers in other countries, only for official internal purposes.",
         ],
     },
     {
@@ -61,13 +61,13 @@ const DECLARATIONS = [
         field: "contactConsent",
         required: true,
         text: [
-            "I agree that Ascendus may contact me about my application by phone, SMS, WhatsApp or email, using the mobile number and email address I have provided.",
+            "I agree that Support Studio Technologies may contact me about my application by phone, SMS, WhatsApp or email, using the mobile number and email address I have provided.",
         ],
     },
     {
         field: "keepProfile",
         text: [
-            "Keep my profile for other suitable roles at Ascendus, and notify me when new roles matching my profile are posted.",
+            "Keep my profile for other suitable roles at Support Studio Technologies, and notify me when new roles matching my profile are posted.",
         ],
     },
 ];

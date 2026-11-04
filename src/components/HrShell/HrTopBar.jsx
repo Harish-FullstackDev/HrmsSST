@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import ascendusMark from "@/assets/HrShell/ascendus-mark.svg";
+import sstMark from "@/assets/HrShell/sst-mark.png";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import bellIcon from "@/assets/HrShell/icons/bell-24.svg";
@@ -56,7 +56,7 @@ function TopSearch() {
 }
 
 // Figma 1898:5289: the HR top bar. 12 of space above a 71 tall bar. With the
-// sidebar closed it starts with the Menu button and the Ascendus mark; with
+// sidebar closed it starts with the Menu button and the SST mark; with
 // it open (Figma 1905:1304) the sidebar carries the logo, so from lg they hide.
 // `user` is the signed-in HR user: { name, role }.
 export default function HrTopBar({ user, sidebarOpen, onOpenSidebar }) {
@@ -76,8 +76,8 @@ export default function HrTopBar({ user, sidebarOpen, onOpenSidebar }) {
                             Menu
                         </button>
                     </div>
-                    <Link href="/hr/dashboard" aria-label="Ascendus Company, dashboard">
-                        <Image src={ascendusMark} alt="" priority className="h-6 w-[30px]" />
+                    <Link href="/hr/dashboard" aria-label="Support Studio Technologies, dashboard">
+                        <Image src={sstMark} alt="" priority className="size-7" />
                     </Link>
                 </div>
 

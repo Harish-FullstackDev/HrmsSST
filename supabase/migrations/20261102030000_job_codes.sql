@@ -1,7 +1,7 @@
 -- Job codes in the form ASC-<year>-<number>, numbered from 001 within each
 -- year (ASC-2026-001, ASC-2026-002, ... then ASC-2027-001). The number grows
 -- past three digits if a year ever needs it. The year is India's (where
--- Ascendus hires). Needs 20261102000000_hiring.sql first. Run once in the
+-- SST hires). Needs 20261102000000_hiring.sql first. Run once in the
 -- Supabase SQL editor; safe to re-run.
 
 -- The last number used in each year. Written only by next_job_code().
